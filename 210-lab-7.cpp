@@ -5,9 +5,19 @@ using namespace std;
 
 const int SIZE = 5;
 
-string* reverseArray(string*, int);
-void displayArray(string*, int);
+string* reverseArray(string*);
+void displayArray(string*);
 
 int main() {
     return 0;
 }
+
+string* reverseArray(string* defaultArray) {
+    for(int i = 0; i < SIZE/2; i++) {
+        string tempNum = *(defaultArray + i);
+        *(defaultArray + i) = *(defaultArray + ((SIZE - 1) - i));
+        *(defaultArray + ((SIZE - 1) - i)) = tempNum;
+    }
+    return defaultArray;
+}
+
