@@ -9,6 +9,23 @@ string* reverseArray(string*);
 void displayArray(string*);
 
 int main() {
+    string* nameArray = new string[SIZE];
+
+    *(nameArray + 0) = "Janet";
+    *(nameArray + 1) = "Jeffe";
+    *(nameArray + 2) = "Jin";
+    *(nameArray + 3) = "Joe";
+    *(nameArray + 4) = "Junio";
+    
+    cout << "Original array: ";
+    displayArray(nameArray);
+
+    reverseArray(nameArray);
+    cout << "Reversed array: ";
+    displayArray(nameArray);
+
+    delete [] nameArray;
+
     return 0;
 }
 
@@ -21,3 +38,9 @@ string* reverseArray(string* defaultArray) {
     return defaultArray;
 }
 
+void displayArray(string* defaultArray) {
+    for(int i = 0; i < SIZE; i++) {
+        cout << *(defaultArray + i) << " ";
+    }
+    cout << endl;
+}
