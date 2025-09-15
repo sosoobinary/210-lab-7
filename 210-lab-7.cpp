@@ -16,7 +16,7 @@ int main() {
     *(nameArray + 2) = "Jin";
     *(nameArray + 3) = "Joe";
     *(nameArray + 4) = "Junio";
-    
+
     cout << "Original array: ";
     displayArray(nameArray);
 
@@ -29,6 +29,9 @@ int main() {
     return 0;
 }
 
+// reverseArray() reverses elements in a dynamic array
+// parameter: string*
+// returns: reversed array
 string* reverseArray(string* defaultArray) {
     for(int i = 0; i < SIZE/2; i++) {
         string tempNum = *(defaultArray + i);
@@ -38,6 +41,8 @@ string* reverseArray(string* defaultArray) {
     return defaultArray;
 }
 
+// displayArray() outputs provided dynamic array
+// parameter: string*
 void displayArray(string* defaultArray) {
     for(int i = 0; i < SIZE; i++) {
         cout << *(defaultArray + i) << " ";
